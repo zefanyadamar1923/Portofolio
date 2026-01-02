@@ -1,0 +1,56 @@
+.about {
+  padding: 100px 10%; /* Konsisten dengan section lainnya */
+}
+
+.about-container {
+  width: 100%;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 50px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  margin-top: 30px;
+  /* Tambahkan transisi agar animasi halus */
+  transition: all 0.4s ease;
+  cursor: default;
+}
+
+/* EFEK HOVER NYALA */
+.about-card:hover {
+  /* Efek sedikit terangkat ke atas */
+  transform: translateY(-10px);
+  /* Memberikan warna latar belakang ungu tipis */
+  background: rgba(108, 92, 231, 0.05);
+  /* Mengubah warna border menjadi ungu terang */
+  border-color: #6c5ce7;
+  /* Efek Glow (pijar) ungu */
+  box-shadow: 0 0 20px rgba(108, 92, 231, 0.2), 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about-card p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #ccc;
+  max-width: 900px;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+
+/* Membuat teks sedikit lebih terang saat kartu di-hover */
+.about-card:hover p {
+  color: white;
+}
+
+.about-card p span {
+  color: #6c5ce7;
+  font-weight: 600;
+  /* Memberikan sedikit glow pada teks ungu saat hover */
+  transition: 0.3s;
+}
+
+.about-card:hover p span {
+  text-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
+}

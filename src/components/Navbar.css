@@ -1,0 +1,135 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box; /* Tambahkan ini agar padding tidak menambah lebar total */
+  top: 0;
+  z-index: 1000;
+  background: rgba(
+    5,
+    5,
+    8,
+    0.85
+  ); /* Sedikit lebih gelap agar teks lebih terbaca */
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis halus di bawah navbar */
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  cursor: pointer;
+}
+.nav-logo span {
+  color: #6c5ce7;
+  text-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-weight: 500;
+  transition: all 0.3s ease; /* Transisi lebih halus */
+  font-size: 0.95rem;
+  position: relative;
+}
+
+/* EFEK HOVER MENYALA (GLOW) */
+.nav-links a:hover {
+  color: white;
+  /* Glow ungu yang lebih lembut dan elegan */
+  text-shadow: 0 0 8px #6c5ce7, 0 0 15px rgba(108, 92, 231, 0.5);
+}
+
+/* Opsional: Garis bawah menyala saat hover */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #6c5ce7;
+  transition: 0.3s;
+  box-shadow: 0 0 8px #6c5ce7;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Burger menu saat hover */
+.burger:hover .line {
+  background: #6c5ce7;
+  box-shadow: 0 0 8px #6c5ce7;
+}
+
+.burger {
+  display: none; /* Sembunyi di desktop */
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+  transition: 0.3s;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: white; /* Pastikan warna putih agar terlihat di background gelap */
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 3px;
+}
+
+/* Efek menyala saat hamburger di-hover */
+.burger:hover .line {
+  background-color: #6c5ce7;
+  box-shadow: 0 0 10px #6c5ce7;
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block; /* Munculkan di mode HP */
+  }
+
+  .nav-links {
+    position: fixed;
+    right: -100%; /* Sembunyi di kanan */
+    top: 0;
+    height: 100vh;
+    width: 70%;
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    border-left: 1px solid rgba(108, 92, 231, 0.2);
+  }
+
+  .nav-links.open {
+    right: 0; /* Muncul saat class 'open' aktif */
+  }
+
+  /* Animasi Hamburger Menjadi 'X' saat terbuka */
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+}

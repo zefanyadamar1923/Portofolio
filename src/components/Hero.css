@@ -1,0 +1,177 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 10% 0; /* Padding atas untuk ruang Navbar */
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+/* TULISAN HELLO BUDS */
+.reveal {
+  color: #6c5ce7;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* NAMA UTAMA (I AM ZEFANYA...) */
+.glow-text {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.glow-text span {
+  color: #6c5ce7;
+  /* Memberikan efek sedikit cahaya pada nama */
+  text-shadow: 0 0 15px rgba(108, 92, 231, 0.3);
+}
+
+/* TEKS SUB-JUDUL (Web & Frontend...) */
+.desc-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* TEKS PARAGRAF DESKRIPSI */
+.main-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #a0a0a0;
+  max-width: 550px;
+  margin-bottom: 35px;
+}
+
+/* TOMBOL */
+.hero-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+}
+
+/* CONTAINER UTAMA GAMBAR */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  perspective: 1000px; /* Memberikan efek kedalaman */
+}
+
+/* BINGKAI DAN ANIMASI GAMBAR */
+.image-wrapper {
+  position: relative;
+  border-radius: 24px;
+  padding: 8px;
+  /* Background awal tipis */
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.2), transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.image-wrapper img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  display: block;
+  transition: all 0.5s ease;
+  filter: grayscale(20%); /* Sedikit dramatis saat diam */
+}
+
+/* EFEK SAAT KURSOR DI ATAS FOTO */
+.image-wrapper:hover {
+  transform: translateY(-10px) rotateY(-5deg); /* Sedikit miring dan naik */
+  border-color: #6c5ce7;
+  /* Efek Cahaya Menyala (Glow) */
+  box-shadow: 0 0 30px rgba(108, 92, 231, 0.4), 0 0 60px rgba(108, 92, 231, 0.1);
+  background: linear-gradient(135deg, #6c5ce7, transparent);
+}
+
+.image-wrapper:hover img {
+  filter: grayscale(0%); /* Warna asli muncul saat di-hover */
+  transform: scale(1.02); /* Gambar membesar sedikit di dalam bingkai */
+}
+
+/* Tambahan Efek Cahaya di belakang gambar */
+.image-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  background: #6c5ce7;
+  filter: blur(50px);
+  opacity: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.image-wrapper:hover::before {
+  opacity: 0.2; /* Muncul pendaran halus di belakang */
+}
+
+/* RESPONSIVE UNTUK LAYAR KECIL */
+@media (max-width: 992px) {
+  .glow-text {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .main-desc {
+    margin: 0 auto 30px;
+  }
+  .glow-text {
+    font-size: 2.5rem;
+  }
+  .hero-image {
+    justify-content: center;
+  }
+}
