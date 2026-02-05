@@ -31,10 +31,6 @@ export default function Contact() {
                     <FaGithub />
                 </a>
 
-                <a href="https://wa.me/6285225340201" target="_blank">
-                    <FaWhatsapp />
-                </a>
-
                 <a href="https://www.facebook.com/share/15jzQ9jFEe/" target="_blank">
                     <FaFacebook />
                 </a>
