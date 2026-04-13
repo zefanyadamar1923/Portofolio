@@ -2,6 +2,16 @@ import React from "react";
 
 const projects = [
   {
+    title: "Portofolio",
+    desc: "Project website portofolio pribadi untuk menampilkan skill dan hasil karya.",
+    tag: "CSS / JS",
+  },
+  {
+    title: "Implementasi Virtualisasi Server Metro Global News",
+    desc: "Membangun infrastruktur server internal menggunakan Proxmox VE, Docker, dan sistem monitoring real-time (Netdata & Portainer) untuk meningkatkan efisiensi layanan media.",
+    tag: "Proxmox / Docker",
+  },
+  {
     title: "Tugas-BPJS-Backend-Python",
     desc: "Implementasi backend integrasi BPJS menggunakan bahasa pemrograman Python.",
     tag: "PYTHON",
@@ -10,11 +20,6 @@ const projects = [
     title: "Tugas-BPJS-Backend-PHP",
     desc: "Sistem backend BPJS yang dibangun menggunakan PHP dan template engine Blade.",
     tag: "PHP / BLADE",
-  },
-  {
-    title: "Portofolio",
-    desc: "Project website portofolio pribadi untuk menampilkan skill dan hasil karya.",
-    tag: "CSS / JS",
   },
   {
     title: "Tugas-BPJS",
