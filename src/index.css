@@ -2,7 +2,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-purple: #6c5ce7;
+  --color-brand-blue: #00d2ff;
+  --color-brand-blue-dark: #00a8cc;
+  --font-sans: "Outfit", sans-serif;
 }
 
 html {
@@ -10,6 +12,27 @@ html {
 }
 
 :root {
-  background-color: #050508;
+  background-color: #101522;
   color: white;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  overflow-x: hidden;
+  background-color: #101522;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.glass-terminal {
+  background: rgba(10, 15, 25, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }

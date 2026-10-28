@@ -5,10 +5,12 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import AnimatedBackground from "./components/AnimatedBackground";
 
 function App() {
   return (
-    <div className="App bg-[#0a0a0a] text-white min-h-screen">
+    <div className="App text-white min-h-screen relative">
+      <AnimatedBackground />
       <Navbar />
       <Hero />
       <About />
